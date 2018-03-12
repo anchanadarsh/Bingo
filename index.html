@@ -10,14 +10,42 @@
     <link href="assets/css/freaking-custom.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
     <style>
-        
+
 
     </style>
 </head>
 
 <body ng-app="bingo">
     <div class="clearfix"></div>
-    <section ng-controller="bingoController" id="section-home1" class="container-fluid text-center p-tb-md" style="height:100vh">
+    <section ng-controller="bingoController" id="section-home1" class="container-fluid text-center p-lr-none" style="height:100vh">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1>
+                        <span>B</span>
+                        <span>I</span>
+                        <span>N</span>
+                        <span>G</span>
+                        <span>O</span>
+                    </h1>
+                </div>
+                <div class="col-xs-12 p-lr-xs">
+                    <div class="bingoArea">
+                        <div ng-repeat="i in guessArr track by $index" class="bingoTiles">{{i}}</div>
+                    </div>
+                </div>
+                <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">
+                    <div class="guessnumArea m-t-md">
+                        <form>
+                            <input class="form-control m-tb-xs" type="number" max="25" min="1" ng-model="guessnum">
+                            <button class="btn btn-default m-tb-xs" type="submit">Go</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
 
     </section>
     <div class="clearfix"></div>
