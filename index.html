@@ -21,7 +21,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <h1>
+                    <h1 style="font-weight: bold">
                         <span>B</span>
                         <span>I</span>
                         <span>N</span>
@@ -31,14 +31,14 @@
                 </div>
                 <div class="col-xs-12 p-lr-xs">
                     <div class="bingoArea">
-                        <div ng-repeat="i in guessArr track by $index" class="bingoTiles">{{i}}</div>
+                        <div ng-repeat="i in guessArr track by $index" class="bingoTiles"><p>{{i}}</p></div>
                     </div>
                 </div>
                 <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">
                     <div class="guessnumArea m-t-md">
                         <form>
                             <input class="form-control m-tb-xs" type="number" max="25" min="1" ng-model="guessnum">
-                            <button class="btn btn-default m-tb-xs" type="submit">Go</button>
+                            <button class="btn btn-default m-tb-xs" type="submit" ng-click="goBingo()">Go</button>
                         </form>
                     </div>
                 </div>

@@ -1,6 +1,6 @@
 @font-face {
   font-family: Montserrat;
-  src: url(assets/fonts/Montserrat-Regular.ttf); }
+  src: url(../fonts/Montserrat-Regular.ttf); }
 body {
   font-family: Montserrat;
   color: white;
@@ -16,8 +16,13 @@ body {
   margin: auto; }
   .bingoArea .bingoTiles {
     flex: 1;
+    display: flex;
     min-width: 50px;
     background: #cfd8dc;
     margin: 2px; }
+    .bingoArea .bingoTiles p {
+      margin: auto;
+      color: #263238;
+      font-weight: bold; }
 
 /*# sourceMappingURL=style.css.map */
