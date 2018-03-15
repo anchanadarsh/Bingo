@@ -31,7 +31,7 @@
                 </div>
                 <div class="col-xs-12 p-lr-xs">
                     <div class="bingoArea">
-                        <div ng-repeat="i in guessArr track by $index" class="bingoTiles"><p>{{i}}</p></div>
+                        <div ng-repeat="i in guessArr track by $index" class="bingoTiles R_{{(((5 - ($index % 5)) / 5 ) + ($index / 5)) - 1}} C_{{$index % 5}}"><p>{{i}}</p></div>
                     </div>
                 </div>
                 <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">

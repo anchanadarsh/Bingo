@@ -14,6 +14,9 @@ bingo.controller("bingoController", ['$scope', function ($scope) {
             //            console.log($scope.arrIndex);
             $scope.guessArr[$scope.arrIndex] = $scope.guessnum;
             $scope.guessnum = '';
+            for (l = 0; l < 6; l++) {
+
+            }
         }
     }
 }]);
