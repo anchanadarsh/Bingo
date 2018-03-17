@@ -8,6 +8,11 @@ body {
   background: black;
   background-size: cover; }
 
+.btn-bingo-go {
+  color: black;
+  background-color: #64DD17;
+  border-color: #64DD17; }
+
 .bingoArea {
   display: flex;
   flex-wrap: wrap;
@@ -24,5 +29,9 @@ body {
       margin: auto;
       color: #263238;
       font-weight: bold; }
+  .bingoArea .comp-set {
+    background: #009688; }
+    .bingoArea .comp-set p {
+      color: #cfd8dc; }
 
 /*# sourceMappingURL=style.css.map */
