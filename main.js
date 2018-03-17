@@ -8,6 +8,7 @@ bingo.controller("bingoController", ['$scope', function ($scope) {
     });
     //    console.log($scope.numArr);
     $scope.guessArr = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''];
+    $scope.attemptArr = [];
     // creating 10 different array to check values of rows and columns
     $scope.r1 = new Array(5);
     $scope.r2 = new Array(5);
@@ -20,6 +21,8 @@ bingo.controller("bingoController", ['$scope', function ($scope) {
     $scope.c4 = new Array(5);
     $scope.c5 = new Array(5);
 
+
+
     $scope.guessnum;
     $scope.arrIndex;
 
@@ -28,9 +31,11 @@ bingo.controller("bingoController", ['$scope', function ($scope) {
         if ($scope.guessnum != '') {
             $scope.arrIndex = $scope.numArr.indexOf($scope.guessnum);
             $scope.guessArr[$scope.arrIndex] = $scope.guessnum;
+            $scope.attemptArr.push($scope.guessnum);
             $scope.guessnum = '';
 
             $scope.r1_count = $scope.r2_count = $scope.r3_count = $scope.r4_count = $scope.r5_count = $scope.c1_count = $scope.c2_count = $scope.c3_count = $scope.c4_count = $scope.c5_count = 0;
+            $scope.bingo_count = 0;
 
             for (l = 0; l < 5; l++) {
                 $scope.r1[l] = $scope.guessArr[l];
@@ -75,34 +80,50 @@ bingo.controller("bingoController", ['$scope', function ($scope) {
                 }
             }
             if ($scope.r1_count == 5) {
-                jQuery(".R_0").addClass("comp-set")
+                jQuery(".R_0").addClass("comp-set");
+                $scope.bingo_count++;
             }
             if ($scope.r2_count == 5) {
-                jQuery(".R_1").addClass("comp-set")
+                jQuery(".R_1").addClass("comp-set");
+                $scope.bingo_count++;
             }
             if ($scope.r3_count == 5) {
-                jQuery(".R_2").addClass("comp-set")
+                jQuery(".R_2").addClass("comp-set");
+                $scope.bingo_count++;
             }
             if ($scope.r4_count == 5) {
-                jQuery(".R_3").addClass("comp-set")
+                jQuery(".R_3").addClass("comp-set");
+                $scope.bingo_count++;
             }
             if ($scope.r5_count == 5) {
-                jQuery(".R_4").addClass("comp-set")
+                jQuery(".R_4").addClass("comp-set");
+                $scope.bingo_count++;
             }
             if ($scope.c1_count == 5) {
-                jQuery(".C_0").addClass("comp-set")
+                jQuery(".C_0").addClass("comp-set");
+                $scope.bingo_count++;
             }
             if ($scope.c2_count == 5) {
-                jQuery(".C_1").addClass("comp-set")
+                jQuery(".C_1").addClass("comp-set");
+                $scope.bingo_count++;
             }
             if ($scope.c3_count == 5) {
-                jQuery(".C_2").addClass("comp-set")
+                jQuery(".C_2").addClass("comp-set");
+                $scope.bingo_count++;
             }
             if ($scope.c4_count == 5) {
-                jQuery(".C_3").addClass("comp-set")
+                jQuery(".C_3").addClass("comp-set");
+                $scope.bingo_count++;
             }
             if ($scope.c5_count == 5) {
-                jQuery(".C_4").addClass("comp-set")
+                jQuery(".C_4").addClass("comp-set");
+                $scope.bingo_count++;
+            }
+            console.log("Bingo Count : " + $scope.bingo_count);
+            console.log("Attempts : " + $scope.attemptArr.length);
+            
+            if ($scope.bingo_count > 4) {
+                $("#winModal").modal();
             }
         }
     }
